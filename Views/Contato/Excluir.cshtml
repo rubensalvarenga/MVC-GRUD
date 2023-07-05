@@ -1,0 +1,44 @@
+﻿@model AppMVC.Models.Contato
+
+@{
+    ViewData["Title"] = "Excluir do Contato";
+
+}
+
+<h1>Exclusão</h1>
+
+<div class="shadow tela-contato">
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(x => x.Nome)
+        </dt>
+        <dt class="col-sm-10">
+            @Html.DisplayFor(x => x.Nome)
+        </dt>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(x => x.Telefone)
+        </dt>
+        <dt class="col-sm-10">
+            @Html.DisplayFor(x => x.Telefone)
+        </dt>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(x => x.Email)
+        </dt>
+        <dt class="col-sm-10">
+            @Html.DisplayFor(x => x.Email)
+        </dt>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(x => x.Ativo)
+        </dt>
+        <dt class="col-sm-10">
+            @Html.DisplayFor(x => x.Ativo)
+        </dt>
+    </dl>
+
+<form asp-action="Excluir">
+    <input type="submit" value="Excluir" class="btn btn-danger"/>
+</form>
+</div>
+<br />
+
+<a asp-action="Index">Voltar</a>

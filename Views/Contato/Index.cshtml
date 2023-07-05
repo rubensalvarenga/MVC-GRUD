@@ -1,0 +1,64 @@
+﻿@model IEnumerable<AppMVC.Models.Contato>
+
+@{
+    ViewData["Title"] = "Listagem de contatos";
+}
+<h2>Contatos</h2>
+<p>
+    <a asp-action="Criar">Novo Contato</a>
+</p>
+<div class="">
+    <table class="tabela-contato shadow tela-contato">
+    <thead >
+        <tr class="cabecario">
+            <th class="linha-cabecario">
+                ID
+            </th>
+            <th>
+                NOME
+            </th>
+            <th>
+                TELEFONE
+            </th>
+            <th>
+                E-MAIL
+                <!-- @Html.DisplayNameFor(model => model.Email) Deixei esse comentário para lembrar caso precise -->
+            </th>
+            <th>
+                ATIVO
+            </th>
+            <th>
+
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td class="linha-cabecario">
+                    @Html.DisplayFor(model => item.Id)
+                </td>
+                <td>
+                    @Html.DisplayFor(model => item.Nome)
+                </td>
+                <td>
+                    @Html.DisplayFor(model => item.Telefone)
+                </td>
+                <td>
+                    @Html.DisplayFor(model => item.Email)
+                </td>
+                <td>
+                    @Html.DisplayFor(model => item.Ativo)
+                </td>
+           
+                <td class="selecao-icon">
+                        <a asp-action="Editar" asp-route-id="@item.Id">  <i class="fa fa-pencil"></i></a>
+                        <a asp-action="Detalhes" asp-route-id="@item.Id"><i class="fa fa-eye"></i></a>
+                        <a asp-action="Excluir" asp-route-id="@item.Id"> <i class="fa fa-trash"></i></a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+</div>
